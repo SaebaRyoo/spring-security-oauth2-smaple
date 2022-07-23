@@ -1,0 +1,9 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: user-auth
+
+auth:
+  clientId: aitao # 客户端id
+  clientSecret: dev # 客户端秘钥

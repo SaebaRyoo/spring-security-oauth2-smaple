@@ -1,0 +1,26 @@
+server:
+  port: 9001
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          api-client-oidc:
+            provider: spring
+            client-id: aitao
+            client-secret: dev
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:9001/login/oauth2/code/{registrationId}"
+            scope: openid
+            client-name: api-client-oidc
+          api-client-authorization-code:
+            provider: spring
+            client-id: aitao
+            client-secret: dev
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:9001/authorized"
+            scope: api.read
+            client-name: api-client-authorization-code
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
